@@ -21,9 +21,21 @@ public class Usuario extends Persona{
     public Usuario() {
     }
 
-    public Usuario(String contraseña, String nombreUsuario) {
+    public Usuario(String contraseña, String nombreUsuario, String nombre, int edad) {
+        super(nombre, edad); // super llama al constructor de la clase padre 
         this.contraseña = contraseña;
         this.nombreUsuario = nombreUsuario;
+//        this.setNombre(nombre);  esto lo sustitituimos haciendo uso de super()
+//        this.setEdad(edad);
+       
+    }
+    
+      public Usuario(String contraseña, String nombreUsuario) {
+          super();
+        this.contraseña = contraseña;
+        this.nombreUsuario = nombreUsuario;
+       
+       
     }
 
     public String getContraseña() {
