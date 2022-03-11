@@ -1,8 +1,4 @@
-/*   Author     : Griselda Medina Avendaño
-    Creado : 7 mar 2022
-    Actualización: 
-    Descripción:
-*/
+
 package entity;
 
 import java.util.ArrayList;
@@ -15,7 +11,7 @@ import java.util.List;
 */
 public class Usuario extends Persona{
     private String contraseña;
-    private String codigo;
+    private int idUsuario;
     private String nombreUsuario;
 
     public Usuario() {
@@ -35,7 +31,7 @@ public class Usuario extends Persona{
         this.contraseña = contraseña;
         this.nombreUsuario = nombreUsuario;
        
-       
+      
     }
 
     public String getContraseña() {
@@ -46,12 +42,12 @@ public class Usuario extends Persona{
         this.contraseña = contraseña;
     }
 
-    public String getCodigo() {
-        return codigo;
+    public int getIdUsuario() {
+        return idUsuario;
     }
 
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
     public String getNombreUsuario() {

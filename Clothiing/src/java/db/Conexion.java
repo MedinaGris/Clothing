@@ -8,6 +8,7 @@ package db;
 
 
 
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 
@@ -24,8 +25,16 @@ public class Conexion {
         this.url= url;
         this.nombrebd= nombrebd;
     }
+
+    public Conexion(){
+           
+    }
+   
     
-    public void Conectar(){
+    
+    
+    public void Conectar() {
+        
         try {
             Class.forName("org.postgresql.Driver");
             this.con = DriverManager.getConnection("jdbc:postgresql://" + url + "/" + nombrebd, user, pass);
