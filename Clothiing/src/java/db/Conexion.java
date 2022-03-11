@@ -10,6 +10,9 @@ package db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+//import java.sql.PreparedStatement;
+//import java.sql.ResultSet;
+import java.sql.Statement;
 
 public class Conexion {
     private final String pass; // = "administrador";
@@ -46,9 +49,8 @@ public class Conexion {
         
     }
     
-   
-    public Connection getConnection() {
-        
+    
+   public Connection getConnection() { 
         return this.con;
     }
 
@@ -56,33 +58,52 @@ public class Conexion {
     public String toString() {
         return "Conexion{" + "pass=" + pass + ", user=" + user + ", url=" + url + ", con=" + con + '}';
     }
+     
     
+//    public void ejecutaUpdate(String sql) {
+//        try {
+//            
+//            Statement st = getConnection().createStatement();
+//            st.executeUpdate(sql);
+//            System.out.println("operación exitosa");
+//            
+//        } catch (Exception ex) {
+//            System.out.println("Error ejecutaQuery:" + ex.getMessage());
+//    
+//        }
+//    }
     
-    
-    public static void main(String args[]){
-       Conexion c=new Conexion("administrador","administrador","localhost","ferregra");
-        System.out.println("Datos: "+ c.toString());
-        c.Conectar();
-        c.Desconectar();
-       
-    }
-    
-} 
-    
-
-//
-//    public ResultSet ejecuta(String sql, String bd) {
+//    public ResultSet ejecutaQuery(String sql) {
 //        ResultSet rs = null;
 //        try {
-//            con = conectaBase(bd);
-//            java.sql.Statement st = con.createStatement();
+//            
+//            java.sql.Statement st = getConnection().createStatement();
 //            rs = st.executeQuery(sql);
+//            System.out.println("operación exitosa");
+//            
 //        } catch (Exception ex) {
 //            System.out.println("Error:" + ex.getMessage());
 //        }
 //        return rs;
 //    }
     
+    
+    
+    
+    public static void main(String args[]){
+       Conexion c=new Conexion("postgres","medinagris","localhost","clothing");
+        System.out.println("Datos: "+ c.toString());
+        c.Conectar();
+//        c.ejecutaUpdate("insert into producto values('8', 'Pantalon', 'mezclilla"
+//                + "', 152.5, 10 );");
+        c.Desconectar();
+       
+    }
+    
+} 
+    
+ 
+
    
 
 
